@@ -1,17 +1,19 @@
 NULL_OUTPUT = "."
 
 
-def print_grid(grid):
+def printable_grid(grid):
     """
     :type grid: 2-D array of numbers
     """
+    output = ""
     for row in grid:
-        output = ""
+        row_output = ""
         for item in row:
             if item is None:
                 item = NULL_OUTPUT
-            if output == "":
-                output = str(item)
+            if row_output == "":
+                row_output = str(item)
             else:
-                output += " " + str(item)
-        print(output)
+                row_output += " " + str(item)
+        output += row_output + "\n"
+    return output
